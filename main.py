@@ -80,7 +80,7 @@ def system_information():
         hostname = socket.gethostname()
         IPAddr = socket.gethostbyname(hostname)
         try:
-            public_ip = get("https://api.ipify.org").text
+            public_ip = get("https://api.ipify.org", timeout=60).text
             f.write("Public IP Address: " + public_ip + '\n')
         except Exception:
             f.write("Couldn't get Public IP Address (May be due to max query) \n")
